@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <style>
+            a:link {
+                    color: green;
+                    background-color: transparent;
+                    text-decoration: none;
+            }
+
+            table, th, td {
+              padding: 10px;
+              border: 2px solid rgb(0, 0, 0);
+              border-collapse: collapse;
+              margin-left:auto;
+              margin-right:auto;
+            }
+            thead {
+                background-color: #fd9673;
+                color: #ffffff;
+            }
+            
+
+          </style>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        <p style="text-align:center"> List of Steller Predictions </p>
+        <table>
+            <thead>
+              <tr>
+                <th>Datetime</th>
+                <th>Right Ascenion</th>
+                <th>Declination</th>
+                <th>Ultra Violet</th>
+                <th>Green</th>
+                <th>Red</th>
+                <th>Shorter Infrared</th>
+                <th>Infrared</th>
+                <th>Red shift</th>
+                <th>Predictions</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        <td> {{row["date_created"]}} </td>
+                        <td>{{row["ra"]}}</td>
+                        <td>{{row["dec"]}}</td>
+                        <td>{{row["u"]}}</td>	
+                        <td>{{row["g"]}}</td>
+                        <td>{{row["r"]}}</td>
+                        <td>{{row["i"]}}</td>
+                        <td>{{row["z"]}}</td>
+                        <td>{{row["redshift"]}}</td>
+                        <td>{{row["prediction"]}}</td> 
+                    </tr>
+                {% endfor %}
+        
+            </tbody>
+          </table>
+        <br></br>
+        <br></br>
+        <br></br>
+        <a href = "/" >Go back to home page</a>
+        
+    </body>
+</html>

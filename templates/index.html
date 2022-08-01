@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<!-- <link rel="stylesheet" href="templates/style.css"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Steller Type</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	  <input type="text" name="ra" placeholder="Right ascension" required="required" />
+        <input type="text" name="dec" placeholder="Declination" required="required" />
+        <input type="text" name="u" placeholder="Ultra Violet" required="required" />
+        <input type="text" name="g" placeholder="Green" required="required" />
+        <input type="text" name="r" placeholder="Red" required="required" />
+        <input type="text" name="i" placeholder="Shorter Infrared" required="required" />
+		    <input type="text" name="z" placeholder="Infrared" required="required" />
+        <input type="text" name="redshift" placeholder="Redshift" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+   <br>
+   <br>
+   <a href="http://127.0.0.1:5000/tables">Access Steller Data</a>
+
+ </div>
+
+
+</body>
+</html>
