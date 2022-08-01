@@ -28,20 +28,20 @@ Please follow the steps to run this Steller Prediction API
 
 EXPLORATORY DATA ANALYSIS:
 
-    - Please have a look at "Steller_EDA_classification_final.ipynb" file
+- Please have a look at "Steller_EDA_classification_final.ipynb" file
 
 
 
 DEMO OF FLASK API
 
-    - DOCKER BUILD:
-    ![Example 1](/images/docker_build.PNG)
+- DOCKER BUILD:
+![Example 1](/images/docker_build.PNG)
 
-    - DOCKER RUN
-    ![Example 1](/images/docker_run.PNG)
+- DOCKER RUN
+![Example 1](/images/docker_run.PNG)
 
-    - FLASK API
-    ![Example 1](/images/index.PNG)
+- FLASK API
+![Example 1](/images/index.PNG)
 
 
 
